@@ -1,0 +1,50 @@
+<!DOCTYPE heml>
+<meta charset="UTF-8">
+<title>canvas 要素の機能</title>
+<style>canvas{ border: 1px solid black; }</style>
+<script>
+function main(){
+         var canvas = document.getElementById("myCanvas");
+         var c = canvas.getContext("2d");
+         
+         var g = c.createLinearGradient( 0, 0, 640, 0 );
+         g.addColorStop( 1.0, 'rgb(0, 0, 0)');
+         g.addColorStop( 0.0, 'rgb(255, 241, 15)');
+         c.fillStyle = g;
+         c.fillRect( 0, 0, 640, 480 );
+    
+        
+         
+         c.fillStyle = "#DD84E0";
+         c.beginPath();
+         c.arc(250, 250, 230, 0, Math.PI*2, true);
+         c.fill();
+    
+         c.strokeStyle = "black";
+         c.lineWidth = 50;
+         c.beginPath();
+         c.moveTo(50, 320);
+         c.lineTo(450, 320); 
+         c.stroke();
+         
+         c.strokeStyle = "black";
+         c.lineWidth = 90;
+         c.beginPath();
+         c.moveTo(170, 60);
+         c.lineTo(170,440);
+         c.stroke();
+    
+         c.beginPath();
+         c.strokeStyle = g;
+         c.globalAlpha = 1;
+         c.lineWidth = 40;
+         c.beginPath();
+         c.arc(250, 250, 212.3, 0, Math.PI*2, true);
+         c.stroke();
+         
+}
+</script>
+<body onload="main()">
+<canvas id="myCanvas" width="640" height="480">
+</canvas>
+    
